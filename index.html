@@ -64,6 +64,13 @@
       line-height: 1;
     }
 
+    .contact-line {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: var(--text);
+      opacity: 0.85;
+    }
+
     /* Resume Button */
     .resume-btn {
       display: inline-block;
@@ -119,6 +126,98 @@
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 4px 12px rgba(0,119,255,0.3);
+    }
+
+    /* Skills grouped by category */
+    .skills-category {
+      margin-bottom: 25px;
+    }
+
+    .skills-category h3 {
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+    }
+
+    .pill-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      background: var(--card-bg);
+      border: 1px solid rgba(0,119,255,0.3);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: 0.3s ease;
+    }
+
+    .pill:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0,119,255,0.3);
+      border-color: var(--accent);
+    }
+
+    /* Experience section */
+    .exp-card {
+      background: var(--card-bg);
+      padding: 25px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,119,255,0.3);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .exp-card .exp-meta {
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+    }
+
+    .exp-card h4 {
+      color: yellowgreen;
+      margin: 18px 0 8px;
+      font-size: 1.05rem;
+    }
+
+    .exp-card ul {
+      margin: 0 0 5px;
+      padding-left: 22px;
+    }
+
+    .exp-card li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .exp-card .note {
+      font-style: italic;
+      opacity: 0.75;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    /* Education / Certification grid */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .edu-card h3 {
+      font-size: 1.05rem;
+    }
+
+    .edu-card .edu-sub {
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin: 4px 0 8px;
+    }
+
+    .edu-card .edu-years {
+      opacity: 0.8;
+      font-size: 0.9rem;
     }
 
     a {
@@ -236,6 +335,7 @@
     <h1>Arun R</h1>
     <div class="role"></div>
     <p>Chennai, Tamil Nadu, India</p>
+    <p class="contact-line">+91 9629164611 &nbsp;|&nbsp; arun16official@gmail.com</p>
     <!-- <a href="Arun_Resume.pdf" class="resume-btn" download><i class="fa-solid fa-download"></i> Download Resume</a> -->
   </header>
 
@@ -243,28 +343,80 @@
     <h2>About Me</h2>
     <h3>const ARUN_R = "Software Developer";</h3>
     <p>
-      I’m a passionate <strong>Software Developer</strong> specializing in <strong>PHP and Laravel</strong>. 
-      I bring both front-end and back-end experience to deliver clean, efficient code and seamless 
-      user experiences. I enjoy solving problems through modern design, database logic, and 
-      creative automation to build robust web systems.
+      I’m a passionate <strong>Software Developer</strong> with 2+ years of experience in
+      <strong>CRM development</strong> and full-stack web applications, specializing in
+      <strong>PHP and Laravel</strong>. I hold a Master of Computer Applications (MCA) and bring
+      both front-end and back-end experience to deliver clean, efficient code and seamless
+      user experiences. I enjoy solving problems through modern design, database logic, and
+      creative automation to build robust, scalable web systems.
     </p>
+  </section>
+
+  <section id="experience">
+    <h2>Work Experience</h2>
+    <div class="exp-card">
+      <h3>Software Developer — Rsoft Technologies Pvt Ltd</h3>
+      <p class="exp-meta">Pattabiram Tidel Park, Chennai &nbsp;|&nbsp; 2 Years Experience</p>
+
+      <h4>CRM Development (Primary Role)</h4>
+      <ul>
+        <li>Developed a full-featured CRM system using Laravel, PHP, and MySQL.</li>
+        <li>Built REST APIs, database schemas, and core business logic modules.</li>
+        <li>Used Ajax and jQuery for dynamic, real-time data interactions.</li>
+        <li>Implemented role-based access control for Admin, Manager, and Staff users.</li>
+      </ul>
+
+      <h4>Additional Assignments</h4>
+      <p class="note">The following tasks were assigned by the company outside of the primary CRM role:</p>
+      <ul>
+        <li>Designed and developed the official company website using Next.js and Tailwind CSS, as assigned by management to support the company's online presence.</li>
+        <li>Performed end-to-end QA testing of the company website using Playwright with TypeScript, assigned upon website completion to ensure quality and reliability before launch.</li>
+      </ul>
+    </div>
   </section>
 
   <section id="skills">
     <h2>Technical Skills</h2>
-    <div class="card-grid">
-      <div class="card">PHP / Laravel Framework</div>
-      <div class="card">Next JS</div>
-      <div class="card">MySQL & Database Design</div>
-      <div class="card">JavaScript</div>
-       <div class="card">jQuery</div>
-       <div class="card">AJAX</div>
-      <div class="card">HTML5 / CSS3 / Bootstrap</div>
-       <div class="card">Tailwind CSS</div>
-      <div class="card">RESTful API Integration</div>
-      <div class="card">GitHub</div>
-      <div class="card">Responsive UI Design</div>
-      <div class="card">Basic DevOps & Deployment</div>
+
+    <div class="skills-category">
+      <h3>Backend</h3>
+      <div class="pill-grid">
+        <div class="pill">Laravel</div>
+        <div class="pill">PHP</div>
+        <div class="pill">MySQL</div>
+        <div class="pill">Ajax</div>
+        <div class="pill">jQuery</div>
+      </div>
+    </div>
+
+    <div class="skills-category">
+      <h3>Frontend</h3>
+      <div class="pill-grid">
+        <div class="pill">Next.js</div>
+        <div class="pill">Tailwind CSS</div>
+        <div class="pill">HTML</div>
+        <div class="pill">CSS</div>
+        <div class="pill">JavaScript</div>
+      </div>
+    </div>
+
+    <div class="skills-category">
+      <h3>Testing</h3>
+      <div class="pill-grid">
+        <div class="pill">Playwright</div>
+        <div class="pill">TypeScript</div>
+      </div>
+    </div>
+
+    <div class="skills-category">
+      <h3>Other Languages</h3>
+      <div class="pill-grid">
+        <div class="pill">C</div>
+        <div class="pill">C++</div>
+        <div class="pill">Python</div>
+        <div class="pill">Java</div>
+        <div class="pill">Go Lang</div>
+      </div>
     </div>
   </section>
 
@@ -274,19 +426,51 @@
       <div class="card">
         <h3>Food Ordering System</h3>
         <p>
-          A complete multi-panel platform with Admin, User, and Chef dashboards 
-          built using Laravel & PHP for seamless online food ordering and management.
+          A multi-panel food ordering platform with separate dashboards for Admin, User, and
+          Chef enabling online order management, kitchen coordination, and real-time status
+          updates.
         </p>
-        <p><b>Tech Stack:</b> Laravel, PHP, MySQL, HTML, CSS, JS</p>
+        <p><b>Tech Stack:</b> Laravel, PHP, MySQL, Ajax, jQuery, HTML, CSS, JavaScript</p>
       </div>
-      <div class="card">
-        <h3>Portfolio Website</h3>
-        <p>
-          Designed and developed my personal portfolio with smooth UI, responsive 
-          layout, and interactive components to showcase my skills and projects.
-        </p>
-        <p><b>Tech Stack:</b> HTML, CSS, JavaScript</p>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="edu-grid">
+      <div class="edu-card card">
+        <h3>Master of Computer Applications (MCA)</h3>
+        <p class="edu-sub">Distance Education</p>
+        <p class="edu-years">2025 – 2027 &nbsp;|&nbsp; Completed</p>
       </div>
+      <div class="edu-card card">
+        <h3>Bachelor of Computer Applications (BCA)</h3>
+        <p class="edu-sub">S.A. College of Arts &amp; Science</p>
+        <p class="edu-years">2022 – 2025 &nbsp;|&nbsp; 80%</p>
+      </div>
+      <div class="edu-card card">
+        <h3>Higher Secondary (HSC)</h3>
+        <p class="edu-sub">A.S.S Matric Hr. Sec. School</p>
+        <p class="edu-years">2020 – 2022 &nbsp;|&nbsp; 76%</p>
+      </div>
+      <div class="edu-card card">
+        <h3>SSLC</h3>
+        <p class="edu-sub">A.S.S Matric Higher Secondary School</p>
+        <p class="edu-years">2020 &nbsp;|&nbsp; 77%</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="certification">
+    <h2>Certification</h2>
+    <div class="card">
+      <h3>Diploma in Software Application (DSA)</h3>
+      <p class="edu-sub">RK Infotech Academy, Avadi &nbsp;|&nbsp; ISO 9001:2015 Certified</p>
+      <p class="edu-years">January 2023 – March 2024 &nbsp;|&nbsp; Grade: A+</p>
+      <p><b>Courses:</b> C, C++, Python, Advanced Java, Go Lang</p>
+      <p class="note" style="opacity:0.7; font-size:0.85rem; margin-top:10px;">
+        Completed alongside BCA degree — attended after college hours (post 1:30 PM).
+      </p>
     </div>
   </section>
 
@@ -294,6 +478,10 @@
     <h2>Contact</h2>
     <p>Let’s connect for collaborations or opportunities.</p>
     <div class="contact-grid">
+      <div class="contact-card">
+        <i class="fa-solid fa-phone"></i>
+        <a href="tel:+919629164611">+91 9629164611</a>
+      </div>
       <div class="contact-card">
         <i class="fa-solid fa-envelope"></i>
         <a href="mailto:arun16official@gmail.com">arun16official@gmail.com</a>
@@ -323,9 +511,9 @@
     const roles = [
       "Software Developer",
       "PHP / Laravel Developer",
+      "CRM Developer",
       "Full Stack Web Developer",
-      "Next.js Developer",
-      "Backend Engineer"
+      "Next.js Developer"
     ];
 
     const profilePic = document.getElementById("profilePic");
@@ -385,7 +573,3 @@
   </script>
 </body>
 </html>
-
-
-
-
